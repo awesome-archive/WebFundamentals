@@ -3,7 +3,7 @@ book_path: /web/fundamentals/_book.yaml
 description: Learn how to integrate a service worker into an existing application to make the application work offline.
 
 {# wf_auto_generated #}
-{# wf_updated_on: 2018-07-03 #}
+{# wf_updated_on: 2018-07-02 #}
 {# wf_published_on: 2016-01-01 #}
 
 
@@ -216,10 +216,9 @@ The next step is to program our service worker to return the intercept the reque
 <li>Why do you have ?homescreen=1</li>
 <li>
 <p>URLs with query string parameters are treated as individual URLs and need to be cached separately.</p>
-</aside>
 </li>
 </ul>
-
+</aside>
 
 
 ## Intercept the web page requests

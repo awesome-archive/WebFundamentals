@@ -58,7 +58,7 @@ server.
 
       // Supported payment methods
       var supportedInstruments = [{
-          supportedMethods: ['basic-card']
+          supportedMethods: ['basic-card'],
           data: {
             supportedNetworks: [
               'visa', 'mastercard', 'amex', 'discover',
@@ -257,4 +257,3 @@ To learn more about Payment Request API, a few documents and resources are avail
 * [Simple demos and sample
   code](https://googlechrome.github.io/samples/paymentrequest/){: .external }
 
-{% include "comment-widget.html" %}

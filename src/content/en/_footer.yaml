@@ -4,10 +4,10 @@ footer:
     description: The latest news on the Chromium blog.
     icon: https://www.gstatic.com/images/icons/material/product/2x/chrome_chromium_64dp.png
     path: https://blog.chromium.org
-  - label: GitHub
-    description: Fork our code samples and other open-source projects.
-    path: https://github.com/googlechrome
-    icon: /site-assets/logo-github.svg
+  - label: web.dev
+    description: Useful guidance and analysis from web.dev for web developers.
+    path: https://web.dev/
+    icon: /web/images/web-dev-logo.png
   - label: Twitter
     description: Connect with @ChromiumDev on Twitter.
     icon: /site-assets/logo-twitter.svg
@@ -18,18 +18,21 @@ footer:
     path: /web/shows/
 
 
+
 - linkboxes:
   - name: Key Topics
     icon_name: star
     contents:
-    - label: Building for Billions
-      path: /web/billions/
+    - label: Web on Android
+      path: /web/android/
     - label: Chrome Extension Docs
       path: https://developers.chrome.com/extensions/api_index
+    - label: Site-Kit
+      path: /web/site-kit/
     - label: Developer Feedback Program
       path: /web/feedback/
     - label: Progressive Web Apps
-      path: /web/progressive-web-apps/
+      path: https://web.dev/progressive-web-apps/
 
   - name: Training and Partners
     icon_name: school

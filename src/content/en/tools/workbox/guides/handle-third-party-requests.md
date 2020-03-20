@@ -2,7 +2,7 @@ project_path: /web/tools/workbox/_project.yaml
 book_path: /web/tools/workbox/_book.yaml
 description: A guide on how to handle third party requests with Workbox.
 
-{# wf_updated_on: 2018-10-17 #}
+{# wf_updated_on: 2020-01-15 #}
 {# wf_published_on: 2017-11-15 #}
 {# wf_blink_components: N/A #}
 
@@ -28,10 +28,10 @@ requests can be read in JavaScript if the server returns
 [CORS headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), but a
 number of sites will not do this.
 
-In service workers you can make requests to third-parties and cache the
-responses. For opaque responses the contents of the Response will still
-be hidden. You can’t even check that status code of the response. Because
-of this Workbox treats opaque responses differently.
+In service workers, you can make requests to third-parties and cache the
+responses. For opaque responses, the contents of the Response will still
+be hidden. You can’t even check the status code of the response. Because
+of this, Workbox treats opaque responses differently.
 
 You can learn more about opaque responses from this
 [Stack Overflow Q&A](https://stackoverflow.com/questions/39109789/what-limitations-apply-to-opaque-responses).
@@ -69,12 +69,15 @@ In general, Workbox will not cache opaque responses.
 
 The reason for this is that it’s very easy to get into a bad state.
 
-Let’s say a developer set up a route with a "cache first" strategy.
+Let’s say a developer set up a route with a `CacheFirst` strategy.
 
 ```javascript
-workbox.routing.registerRoute(
+import {registerRoute} from 'workbox-routing';
+import {CacheFirst} from 'workbox-strategies';
+
+registerRoute(
   'https://cdn.google.com/example-script.min.js',
-  workbox.strategies.cacheFirst(),
+  new CacheFirst(),
 );
 ```
 
@@ -85,23 +88,25 @@ The user will be in a broken state.
 
 However, it’s not a bad thing to want to try and add some fault tolerance to
 these requests so Workbox will allow opaque responses to be cached with the
-`networkFirst` and `staleWhileRevalidate` strategies. Since these strategies
-regularly update the cached response it’s much safer to cache them as
+`NetworkFirst` and `StaleWhileRevalidate` strategies. Since these strategies
+regularly update the cached response, it’s much safer to cache them as
 hopefully a bad request will be short lived and used rarely.
 
 ```javascript
-workbox.routing.registerRoute(
+import {registerRoute} from 'workbox-routing';
+import {NetworkFirst, StaleWhileRevalidate} from 'workbox-strategies';
+
+registerRoute(
   'https://cdn.google.com/example-script.min.js',
-  workbox.strategies.networkFirst(),
+  new NetworkFirst(),
 );
 
 // OR
 
-workbox.routing.registerRoute(
+registerRoute(
   'https://cdn.google.com/example-script.min.js',
-  workbox.strategies.staleWhileRevalidate(),
+  new StaleWhileRevalidate(),
 );
-
 ```
 
 If you use another caching strategy and an opaque response is returned,
@@ -111,21 +116,28 @@ Workbox will log a warning letting you know that the response wasn’t cached.
 
 ## Force Caching of Opaque Responses
 
-If you are certain that you want to cache an opaque response, you can do
-so using the `workbox.cacheableResponse.Plugin`, like so:
+If you are certain that you want to cache an opaque response, you can configure
+that behavior using a plugin. This example uses
+[workbox-cacheable-response](/web/tools/workbox/modules/workbox-cacheable-response):
 
 ```javascript
-workbox.routing.registerRoute(
+import {registerRoute} from 'workbox-routing';
+import {NetworkFirst, StaleWhileRevalidate} from 'workbox-strategies';
+import {CacheableResponsePlugin} from 'workbox-cacheable-response';
+
+registerRoute(
   'https://cdn.google.com/example-script.min.js',
-  workbox.strategies.cacheFirst({
+  new CacheFirst({
     plugins: [
-      new workbox.cacheableResponse.Plugin({
+      new CacheableResponsePlugin({
         statuses: [0, 200]
       })
     ]
   }),
 );
 ```
+
+<a href="./using-plugins" class="button">Learn more about using plugins</a>
 
 <aside markdown="1" class="warning">
 <strong>Warning:</strong> This will cache a response that could be an error, which would then never

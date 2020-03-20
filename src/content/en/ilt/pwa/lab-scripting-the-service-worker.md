@@ -2,11 +2,13 @@ project_path: /web/_project.yaml
 book_path: /web/ilt/pwa/_book.yaml
 
 {# wf_auto_generated #}
-{# wf_updated_on: 2018-09-19 #}
+{# wf_blink_components: N/A #}
+{# wf_updated_on: 2019-04-26 #}
 {# wf_published_on: 2016-01-01 #}
 
 
 # Lab: Scripting the Service Worker {: .page-title }
+{% include "web/ilt/pwa/_shared/update.html" %}
 
 
 
@@ -319,7 +321,7 @@ navigator.serviceWorker.register('/service-worker.js', {
 
 In the above example the scope of the service worker is set to `/kitten/`. The service worker intercepts requests from pages in `/kitten/` and `/kitten/lower/` but not from pages like `/kitten` or `/`.
 
-Note: You cannot set an arbitrary scope that is above the service worker's actual location. However, if your server worker is active on a client being served with the `Service-Worker-Allowed` header, you can specify a max scope for that service worker above the service worker's location.
+Note: You cannot set an arbitrary scope that is above the service worker's actual location. However, if your service worker is active on a client being served with the `Service-Worker-Allowed` header, you can specify a max scope for that service worker above the service worker's location.
 
 #### For more information
 

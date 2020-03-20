@@ -44,6 +44,8 @@ toc:
     path: /web/tools/lighthouse/audits/oversized-images
   - title: Speed Index
     path: /web/tools/lighthouse/audits/speed-index
+  - title: Performance Budgets
+    path: /web/tools/lighthouse/audits/budgets
   - title: Preload key requests
     path: /web/tools/lighthouse/audits/preload
   - title: Reduce Render-Blocking Scripts
@@ -177,3 +179,5 @@ toc:
     path: /web/tools/lighthouse/audits/indexing
   - title: robots.txt is not valid
     path: /web/tools/lighthouse/audits/robots
+  - title: Tap targets are not sized appropriately
+    path: /web/tools/lighthouse/audits/tap-targets

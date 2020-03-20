@@ -26,7 +26,7 @@ console.log(padding.value, padding.unit); // 42, 'px'
 The days of concatenating strings and subtle bugs are over!
 
 Heads up: Chrome 66 adds support for the CSS Typed Object Model for a
-[subset of CSS properties](https://chromium.googlesource.com/chromium/src/+/master/third_party/WebKit/Source/core/css/cssom/README.md).
+[subset of CSS properties](https://chromium.googlesource.com/chromium/src/+/master/third_party/blink/renderer/core/css/cssom/README.md).
 {: .dogfood }
 
 ## Introduction {: #intro}
@@ -578,8 +578,6 @@ never felt right to me. The CSS Typed OM API is a bit verbose, but hopefully it
 results in fewer bugs and more performant code down the line.
 
 {% include "web/_shared/rss-widget-updates.html" %}
-
-{% include "comment-widget.html" %}
 
 [cssom-old]: https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model/Using_dynamic_styling_information
 [spec]: https://drafts.css-houdini.org/css-typed-om/

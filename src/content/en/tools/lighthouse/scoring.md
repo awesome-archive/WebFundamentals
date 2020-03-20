@@ -37,7 +37,7 @@ score usually indicates an error in Lighthouse. If you see a 0 score repeatedly,
 [file a bug on the Lighthouse repo][bug]{:.external}. 100 is the best possible score. Typically
 a score above 90 represents the top 5 percent of top-performing pages.
 
-[bug]: https://github.com/GoogleChrome/lighthouse/issues/new
+[bug]: https://github.com/GoogleChrome/lighthouse/issues/new/choose
 
 ### Which Performance audits contribute to your score {: #perf-audits }
 
@@ -67,7 +67,7 @@ a Lighthouse score of 99.
 ### How the Performance score is weighted {: #perf-weighting }
 
 The audits that contribute to the Performance score are not equally weighted. See [Scoring
-Details][details]{:.external} to see how each Performance audit is weighted. The heaver-weighted
+Details][details]{:.external} to see how each Performance audit is weighted. The heavier-weighted
 audits have a larger impact on your overall Performance score. The weightings are based on
 heuristics. The Lighthouse team is working on formalizing this approach through more field data.
 

@@ -2,7 +2,7 @@ project_path: /web/_project.yaml
 book_path: /web/updates/_book.yaml
 description: ReportingObserver gives developers insight into what their code is doing in the wild. ReportingObserver surfaces information on issues like deprecations and interventions, messages that were previously only available in the DevTools console.
 
-{# wf_updated_on: 2018-10-23 #}
+{# wf_updated_on: 2019-09-28 #}
 {# wf_published_on: 2018-07-26 #}
 {# wf_tags: chrome69,reporting-observer,analytics,interventions,deprecations #}
 {# wf_featured_image: /web/updates/images/generic/send.png #}
@@ -45,7 +45,7 @@ for further analysis.
 
 Why is that useful? Until now, deprecation and
 intervention warnings were only available in the DevTools as console messages.
-Interventions in particular are only triggered by various real-world constraints
+Interventions, in particular, are only triggered by various real-world constraints
 like device and network conditions. Thus, you may never even see these messages
 when developing/testing a site locally. `ReportingObserver` provides
 the solution to this problem. When users experience potential issues in the wild,
@@ -105,16 +105,16 @@ list of issues that the page caused:
 ```js
 const observer = new ReportingObserver((reports, observer) => {
   for (const report of reports) {
-    // → report.id === 'XMLHttpRequestSynchronousInNonWorkerOutsideBeforeUnload'
     // → report.type === 'deprecation'
     // → report.url === 'https://reporting-observer-api-demo.glitch.me'
+    // → report.body.id === 'XMLHttpRequestSynchronousInNonWorkerOutsideBeforeUnload'
     // → report.body.message === 'Synchronous XMLHttpRequest is deprecated...'
     // → report.body.lineNumber === 11
     // → report.body.columnNumber === 22
     // → report.body.sourceFile === 'https://reporting-observer-api-demo.glitch.me'
     // → report.body.anticipatedRemoval === <JS_DATE_STR> or null
   }
-}});
+});
 
 observer.observe();
 ```
@@ -144,7 +144,7 @@ const observer = new ReportingObserver((reports, observer) => {
 ```
 
 It is great for situations like lazy-loading a library that uses
-a `ReportingObserver`. The observer gets added late but you
+a `ReportingObserver`. The observer gets added late, but you
 **don't miss out on anything that happened earlier in the page load**.
 
 #### Stop observing {: #stop }
@@ -186,7 +186,7 @@ observer.observe();
 
 ## Conclusion
 
-`ReportingObserver` gives us an additional way for discovering and monitoring
+`ReportingObserver` gives you an additional way for discovering and monitoring
 potential issues in your web app. It's even a useful tool for understanding the
 health of your code base (or lack thereof). Send reports to a backend,
 know about the real-world issues users are hitting on your site, update
@@ -228,8 +228,6 @@ for its well structured deprecation reports and additional metadata like
 - [chromestatus.com entry][chromestatus]
 
 {% include "web/_shared/rss-widget-updates.html" %}
-
-{% include "comment-widget.html" %}
 
 [spec]: https://w3c.github.io/reporting
 [reportingobserver]: https://w3c.github.io/reporting/#observers

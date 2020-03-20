@@ -2,7 +2,7 @@ project_path: /web/_project.yaml
 book_path: /web/resources/_book.yaml
 description: Widgets you can use to simplify your writing and development
 
-{# wf_updated_on: 2018-10-12 #}
+{# wf_updated_on: 2019-03-04 #}
 {# wf_published_on: 2016-09-13 #}
 {# wf_blink_components: N/A #}
 
@@ -174,20 +174,6 @@ Will render as:
 
 {% include "web/_shared/related-guides/heading.html" %}
 {% include "web/_shared/related-guides/service-workers.html" %}
-
-
-## User comments
-
-To allow users to comment on your documentation, add a comment widget to the
-bottom of the page. For example:
-
-<pre class="prettyprint">
-&#123;% include "comment-widget.html" %}
-</pre>
-
-Note: the comment widget does **not** render in the staging or development
-environment, and will only be visible when the page is published on DevSite.
-
 
 ## Videos
 

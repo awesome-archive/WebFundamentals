@@ -2,7 +2,7 @@ project_path: /web/_project.yaml
 book_path: /web/updates/_book.yaml
 description: A round up of the audio/video updates in Chrome 63/64.
 
-{# wf_updated_on: 2018-07-31 #}
+{# wf_updated_on: 2019-06-06 #}
 {# wf_published_on: 2017-12-08 #}
 {# wf_tags: news,chrome63,chrome64,media,audio,video,origintrials #}
 {# wf_featured_image: /web/updates/images/generic/play-outline.png #}
@@ -39,6 +39,8 @@ solve: An API to query the browser about the decoding abilities of the device
 based on information such as the codecs, profile, resolution, bitrates, etc. It
 would expose information such as whether the playback should be smooth and
 power efficient based on previous playback statistics recorded by the browser.
+
+Note: This API is available in all types of workers in [Chrome 76](https://www.chromestatus.com/feature/5730672977117184).
 
 In a nutshell, here’s how the Decoding Info API works for now. Check out the
 [official
@@ -333,8 +335,6 @@ doesn’t need to be muted anymore. It means you can play sound crazy slow and
 crazy fast now.
 
 [Chromium Bug](https://bugs.chromium.org/p/chromium/issues/detail?id=289354)
-
-{% include "comment-widget.html" %}
 
 [Media Capabilities]: https://wicg.github.io/media-capabilities/
 [Windows 10 is in HDR mode]: https://support.microsoft.com/en-us/help/4040263/windows-10-hdr-advanced-color-settings

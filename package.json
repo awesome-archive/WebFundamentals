@@ -23,8 +23,8 @@
     "gulp-remark": "^3.0.0",
     "husky": "^0.14.3",
     "inquirer": "^3.3.0",
-    "jsdoc-baseline": "https://github.com/hegemonic/baseline/tarball/master",
-    "workbox-build": "^3.6.1"
+    "jsdoc-baseline": "^0.1.5",
+    "workbox-build": "^5.0.0"
   },
   "private": true,
   "dependencies": {
@@ -41,7 +41,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.7",
     "handlebars": "^4.0.5",
-    "handlebars-helpers": "^0.7.5",
+    "handlebars-helpers": "0.8.4",
     "js-yaml": "^3.6.1",
     "jsdoc": "^3.5.5",
     "jsonschema": "^1.2.0",
@@ -72,6 +72,6 @@
     "precommit": "gulp update-updated_on",
     "prepush": "npm test",
     "prestart": "gulp build",
-    "postinstall": "tools/update-resources.sh && gulp post-install"
+    "postinstall": "gulp post-install"
   }
 }

@@ -99,7 +99,7 @@ website, register a service worker and add payment instruments through
 ```
 if ('serviceWorker' in navigator) {
   // Register a service worker
-  const registratoin = await navigator.serviceWorker.register(
+  const registration = await navigator.serviceWorker.register(
     // A service worker JS file is separate
     'service-worker.js'
   );
@@ -221,4 +221,3 @@ kind of payment method, supported methods can include:
 
 {% include "web/_shared/rss-widget-updates.html" %}
 
-{% include "comment-widget.html" %}

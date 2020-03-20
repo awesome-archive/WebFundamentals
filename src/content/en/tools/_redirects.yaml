@@ -1,5 +1,23 @@
 redirects:
 
+- from: /web/tools/chrome-devtools/ui
+  to:   /web/tools/chrome-devtools/customize/
+
+- from: /web/tools/chrome-devtools/console/get-started
+  to:   /web/tools/chrome-devtools/console/
+
+- from: /web/tools/chrome-devtools/snippets
+  to:   /web/tools/chrome-devtools/javascript/snippets
+
+- from: /web/tools/chrome-devtools/manage-data/page-resources
+  to:   /web/tools/chrome-devtools/resources/
+
+- from: /web/tools/chrome-devtools/manage-data/cookies
+  to:   /web/tools/chrome-devtools/storage/cookies
+
+- from: /web/tools/chrome-devtools/network-performance/
+  to:   /web/tools/chrome-devtools/network/
+
 - from: /web/tools/chrome-devtools/console/command-line-reference
   to: /web/tools/chrome-devtools/console/utilities
 
@@ -84,9 +102,6 @@ redirects:
 - from: /web/tools/chrome-devtools/evaluate-performance/rail
   to: /web/fundamentals/performance/rail
 
-- from: /web/tools/chrome-devtools/network-performance/
-  to: /web/tools/chrome-devtools/network-performance/resource-loading
-
 - from: /web/tools/chrome-devtools/evaluate-performance/
   to: /web/tools/chrome-devtools/evaluate-performance/timeline-tool
 
@@ -104,6 +119,9 @@ redirects:
 
 - from: /web/tools/iterate/inspect-styles/media-queries
   to: /web/tools/chrome-devtools/device-mode/media-queries
+
+- from: /web/tools/chrome-devtools/beginners/...
+  to: /web/tools/chrome-devtools/
 
 - from: /web/tools/iterate/...
   to: /web/tools/chrome-devtools/...
@@ -163,10 +181,7 @@ redirects:
   to: /web/tools/chrome-devtools/remote-debugging/
 
 - from: /web/tools/chrome-devtools/debug/snippets/
-  to: /web/tools/chrome-devtools/snippets
-
-- from: /web/tools/chrome-devtools/javascript/snippets
-  to: /web/tools/chrome-devtools/snippets
+  to: /web/tools/chrome-devtools/javascript/snippets
 
 - from: /web/tools/chrome-devtools/debug/watch-variables/
   to: /web/tools/chrome-devtools/javascript/watch-variables
@@ -174,8 +189,8 @@ redirects:
 - from: /web/tools/chrome-devtools/progressive-web-apps/
   to: /web/tools/chrome-devtools/progressive-web-apps
 
-- from: /web/tools/chrome-devtools/security/
-  to: /web/tools/chrome-devtools/security
+- from: /web/tools/chrome-devtools/security
+  to: /web/tools/chrome-devtools/security/
 
 - from: /web/tools/chrome-devtools/profile/memory-problems/memory-diagnosis
   to: /web/tools/chrome-devtools/memory-problems/
@@ -194,6 +209,9 @@ redirects:
 
 - from: /web/tools/chrome-devtools/javascript/console/...
   to: /web/tools/chrome-devtools/console/...
+
+- from: /web/tools/chrome-devtools/network-performance/...
+  to:   /web/tools/chrome-devtools/network/...
 
 - from: /web/tools/service-worker-libraries/
   to: /web/tools/workbox/
@@ -221,3 +239,9 @@ redirects:
 
 - from: /web/tools/workbox/guides/migrate
   to: /web/tools/workbox/guides/migrations/migrate-from-sw
+
+- from: /web/tools/workbox/modules/workbox-broadcast-cache-update
+  to: /web/tools/workbox/modules/workbox-broadcast-update
+
+- from: /web/tools/workbox/modules/workbox-cache-expiration
+  to: /web/tools/workbox/modules/workbox-expiration

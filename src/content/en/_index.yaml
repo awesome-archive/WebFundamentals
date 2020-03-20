@@ -2,7 +2,7 @@
 project_path: /web/_project.yaml
 book_path: /web/_book.yaml
 landing_page:
-  body_class: xx-hide-devsite-banner
+  body_class: hide-devsite-banner
   meta_tags:
   - name: google-site-verification
     content: gfXglzZkMnMmYyTURrVdYisraxO03w5_twQ-DO6QXC8
@@ -41,6 +41,12 @@ landing_page:
           </div>
 
   rows:
+
+  # - classname: devsite-landing-row-100
+  #   background: grey
+  #   items:
+  #   - youtube_id: nImH_dq1NpM
+
   - classname: wf-landing-row
     items:
     - heading: Move to HTTPS
@@ -76,7 +82,7 @@ landing_page:
       description: >
         A new class of web app that is fast, integrated, reliable, and engaging.
       image_path: /web/images/content-responsive-2x.jpg
-      path: /web/progressive-web-apps/
+      path: https://web.dev/progressive-web-apps/
       path_attributes:
       - name: class
         value: gc-analytics-event
@@ -88,7 +94,7 @@ landing_page:
         value: web-home
       buttons:
       - label: Get started
-        path: /web/progressive-web-apps/
+        path: https://web.dev/progressive-web-apps/
         classname: button button-primary
         attributes:
         - name: class

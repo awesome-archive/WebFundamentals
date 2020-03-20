@@ -3,7 +3,7 @@ book_path: /web/tools/workbox/_book.yaml
 description: The module guide for workbox-core.
 
 {# wf_blink_components: N/A #}
-{# wf_updated_on: 2018-03-13 #}
+{# wf_updated_on: 2020-01-15 #}
 {# wf_published_on: 2017-11-27 #}
 
 # Workbox Core {: .page-title }
@@ -23,67 +23,30 @@ This module does provide some functionality to developers, but beyond log
 levels and caching, `workbox-core` offers internal logic to each module,
 rather than the end developer.
 
-## Change the Log Level
-
-Workbox uses a very thin wrapper over `console.log` so that you can filter
-out the Workbox messages separate from your own logic.
-
-![workbox-core Log Demo](../images/modules/workbox-core/workbox-core_logs.png)
-
-To adjust the log level, all you need to do is call `setLogLevel()` and pass
-in a value from `LOG_LEVELS`.
-
-```javascript
-// The most verbose - displays all logs.
-workbox.core.setLogLevel(workbox.core.LOG_LEVELS.debug);
-
-// Shows logs, warnings and errors.
-workbox.core.setLogLevel(workbox.core.LOG_LEVELS.log);
-
-// Show warnings and errors.
-workbox.core.setLogLevel(workbox.core.LOG_LEVELS.warn);
-
-// Show *just* errors
-workbox.core.setLogLevel(workbox.core.LOG_LEVELS.error);
-
-// Silence all of the Workbox logs.
-workbox.core.setLogLevel(workbox.core.LOG_LEVELS.silent);
-```
-
-You can see what the current log level is like so:
-
-```javascript
-console.log(workbox.core.logLevel);
-```
-
-The default log level changes depending on the build type. If you use the
-debug build, `workbox-core.dev.js`, the log level will be set to
-`LOG_LEVELS.log` (i.e. it will log everything except debug messages).
-For production builds, `workbox-core.prod.js`, the log level will be set
-to `LOG_LEVELS.warn`, meaning you’ll only see warnings and errors.
-
 ## View and Change the Default Cache Names
 
-Workbox defines it's caches via `workbox.core.cacheNames`:
+Workbox defines it's caches via `cacheNames`:
 
 ```javascript
-console.log(workbox.core.cacheNames.precache);
+import {cacheNames} from 'workbox-core';
 
-console.log(workbox.core.cacheNames.runtime);
-
-console.log(workbox.core.cacheNames.googleAnalytics);
+console.log(cacheNames.precache);
+console.log(cacheNames.runtime);
+console.log(cacheNames.googleAnalytics);
 ```
 
 These cache names are constructed in the format of a prefix, a name and
 suffix, where the name changes based on the use of the cache.
 
-`<prefix>-<cache id (precache | runtime | googleAnalytics)>-<suffix>`
+`<prefix>-<cache-id>-<suffix>`
 
 You can change these default names by altering all or some of the values
-passed into `setCacheNameDetails()`.
+passed to `setCacheNameDetails()`.
 
 ```javascript
-workbox.core.setCacheNameDetails({
+import {cacheNames, setCacheNameDetails} from 'workbox-core';
+
+setCacheNameDetails({
   prefix: 'my-app',
   suffix: 'v1',
   precache: 'install-time',
@@ -92,16 +55,38 @@ workbox.core.setCacheNameDetails({
 });
 
 // Will print 'my-app-install-time-v1'
-console.log(workbox.core.cacheNames.precache);
+console.log(cacheNames.precache);
 
 // Will print 'my-app-run-time-v1'
-console.log(workbox.core.cacheNames.runtime);
+console.log(cacheNames.runtime);
 
 // Will print 'my-app-ga-v1'
-console.log(workbox.core.cacheNames.googleAnalytics);
+console.log(cacheNames.googleAnalytics);
 ```
 
 The main use case for the prefix and suffix is that if you use Workbox for
-multiple projects and use the same localhost for each project, setting a
+multiple projects and use the same localhost port for each project, setting a
 custom prefix for each module will prevent the caches from conflicting
 with each other.
+
+## Skip Waiting and Clients Claim
+
+Some developers want to be able to publish a new service worker and have it
+update and control a web page as soon as possible, skipping the default
+[service worker lifecycle](/web/fundamentals/primers/service-workers/lifecycle).
+
+If you find yourself wanting this behavior, `workbox-core` provides some helper
+methods to make this easy:
+
+<pre class="prettyprint js">
+import {skipWaiting, clientsClaim} from 'workbox-core';
+
+skipWaiting();
+clientsClaim();
+</pre>
+
+Note: If your web app lazy-loads resources that are uniquely versioned with, e.g., hashes in their
+URLs, it's recommended that you avoid using skip waiting. Enabling it could
+[lead to failures](https://stackoverflow.com/questions/51715127)
+when lazily-loading URLs that were previously precached and were purged during an updated service
+worker's activation.

@@ -1,5 +1,17 @@
 redirects:
 
+- from: /web/fundamentals/codelabs/your-first-pwapp
+  to: https://codelabs.developers.google.com/codelabs/your-first-pwapp/
+
+- from: /web/fundamentals/codelabs/web-serial
+  to: https://codelabs.developers.google.com/codelabs/web-serial/
+
+- from: /web/fundamentals/codelabs/your-first-pwapp/
+  to: https://codelabs.developers.google.com/codelabs/your-first-pwapp/
+
+- from: /web/fundamentals/performance/prpl-pattern
+  to: https://web.dev/apply-instant-loading-with-prpl/
+
 - from: /web/fundamentals/layouts/...
   to: /web/fundamentals/design-and-ux/responsive/
 
@@ -43,13 +55,13 @@ redirects:
   to: /web/fundamentals/design-and-ux/...
 
 - from: /web/fundamentals/engage-and-retain/app-install-banners/...
-  to: /web/fundamentals/app-install-banners/...
+  to: https://web.dev/customize-install/
 
 - from: /web/fundamentals/engage-and-retain/push-notifications/...
   to: /web/fundamentals/push-notifications/...
 
 - from: /web/fundamentals/engage-and-retain/web-app-manifest/...
-  to: /web/fundamentals/web-app-manifest/...
+  to: https://web.dev/add-manifest/
 
 - from: /web/fundamentals/engage-and-retain/...
   to: /web/fundamentals/
@@ -98,9 +110,6 @@ redirects:
 
 - from: /web/fundamentals/primers/service-worker/update-a-service-worker
   to: /web/fundamentals/primers/service-workers/#update-a-service-worker
-
-- from: /web/fundamentals/media/mse/basics
-  to: /web/fundamentals/media/mse/
 
 - from: /web/fundamentals/webvr/...
   to: /web/fundamentals/vr/...
